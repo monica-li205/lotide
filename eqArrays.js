@@ -6,18 +6,17 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
 const eqArrays = function(firstArray, secArray) {
-  let match = false;
-
+  if (firstArray.length !== secArray.length) {
+    return false;
+  }
+  
   for (let i = 0; i < firstArray.length; i++) {
-    if (firstArray[i] === secArray[i]) {
-      match = true;
-    } else if (firstArray[i] !== secArray[i]) {
-      match = false;
+    if (firstArray[i] !== secArray[i]) {
+      return false;
     }
   }
-  return match;
+  return true;
 };
 
 eqArrays([1, 2, 3], [1, 2, 3]) // => true
