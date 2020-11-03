@@ -1,7 +1,7 @@
 const tail = function(array) {
   let newArray = [];
   for (let i = 0; i < array.length; i++) {
-    if (i !== array[0]) {
+    if (i !== 0) {
       newArray.push(array[i]);
     }
   }
